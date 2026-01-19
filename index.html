@@ -14,6 +14,19 @@
 <!-- onload runs JavaScript when the page finishes loading -->
 <body onload="welcomeMessage()">
 
+    <!-- ================= NAVIGATION BAR ================= -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#counter">Counter</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- ================= HEADER SECTION ================= -->
     <header>
         <h1>JavaScript in Website Development</h1>
@@ -23,65 +36,136 @@
     <!-- ================= MAIN CONTENT ================= -->
     <main>
 
-        <!-- 1. LOGIN SYSTEM -->
+        <!-- ============================================================ -->
+        <!-- 1. LOGIN SYSTEM                                             -->
+        <!-- Purpose: Validates username and password credentials         -->
+        <!-- Features: Input validation, conditional checking             -->
+        <!-- ============================================================ -->
         <section class="card">
             <h2>1. Login System</h2>
             <p>This section demonstrates a simple login validation.</p>
 
+            <!-- Username input field - stores user's username -->
             <input type="text" id="username" placeholder="Username">
+            
+            <!-- Password input field - masks characters for security -->
             <input type="password" id="password" placeholder="Password">
 
+            <!-- Additional login fields (commented out for later use) -->
+            <!-- <input type="email" id="email" placeholder="Email Address"> -->
+            <!-- <input type="tel" id="phone" placeholder="Phone Number"> -->
+            <!-- <label><input type="checkbox"> Remember me</label> -->
+            <!-- <input type="text" id="securityQuestion" placeholder="Answer: Your pet's name"> -->
+
+            <!-- Button that triggers the login() function when clicked -->
             <button onclick="login()">Login</button>
 
-            <!-- Students can change default username & password in JS -->
+            <!-- Note: Default credentials are admin/1234 -->
+            <!-- Students can change these values in the JavaScript section -->
         </section>
 
-        <!-- 2. FORM VALIDATION -->
+        <!-- ============================================================ -->
+        <!-- 2. FORM VALIDATION                                           -->
+        <!-- Purpose: Validates user input data before submission          -->
+        <!-- Features: Required fields, age checking, data validation      -->
+        <!-- ============================================================ -->
         <section class="card">
             <h2>2. Form Validation</h2>
             <p>JavaScript checks user input before submission.</p>
 
+            <!-- Text input for user's full name -->
             <input type="text" id="name" placeholder="Enter your name">
+            
+            <!-- Number input for user's age - only accepts numbers -->
             <input type="number" id="age" placeholder="Enter your age">
 
+            <!-- Additional form fields (commented out for learning) -->
+            <!-- Email validation example -->
+            <!-- <input type="email" id="email" placeholder="Enter your email"> -->
+            
+            <!-- Text input for address -->
+            <!-- <input type="text" id="address" placeholder="Enter your address"> -->
+            
+            <!-- Phone number input -->
+            <!-- <input type="tel" id="phone" placeholder="Enter phone number"> -->
+            
+            <!-- Textarea for longer messages -->
+            <!-- <textarea id="message" placeholder="Enter your message"></textarea> -->
+            
+            <!-- Dropdown select menu for countries -->
+            <!-- <select id="country"><option>Select Country</option><option>USA</option><option>Canada</option></select> -->
+            
+            <!-- Checkbox for terms agreement -->
+            <!-- <label><input type="checkbox" id="agree"> I agree to terms</label> -->
+
+            <!-- Button to submit the form and trigger validation -->
             <button onclick="validateForm()">Submit</button>
         </section>
 
-        <!-- 3. DOM MANIPULATION -->
+        <!-- ============================================================ -->
+        <!-- 3. DOM MANIPULATION                                          -->
+        <!-- Purpose: Demonstrates changing HTML content with JavaScript  -->
+        <!-- Features: DOM element selection, innerHTML modification      -->
+        <!-- ============================================================ -->
         <section class="card">
-            <h2>3. Change Content (DOM)</h2>
+            <h2>3. Change Content (DOM Manipulation)</h2>
             <p id="demo">This text will change using JavaScript.</p>
 
+            <!-- Button that triggers the changeText() function -->
+            <!-- Clicking this changes the paragraph content above -->
             <button onclick="changeText()">Change Text</button>
 
-            <!-- Students can change the text inside JavaScript -->
+            <!-- Note: DOM = Document Object Model -->
+            <!-- It allows JavaScript to access and modify HTML elements -->
         </section>
 
-        <!-- 4. IMAGE GALLERY -->
+        <!-- ============================================================ -->
+        <!-- 4. IMAGE GALLERY                                             -->
+        <!-- Purpose: Demonstrates dynamic image changing                 -->
+        <!-- Features: Image source manipulation, event handling          -->
+        <!-- ============================================================ -->
         <section class="card">
-            <h2>4. Image Change</h2>
+            <h2>4. Image Change (Gallery)</h2>
             <p>JavaScript updates images dynamically.</p>
 
-            <img id="myImage" src="https://via.placeholder.com/250">
+            <!-- Image element with id to reference in JavaScript -->
+            <img id="myImage" src="kda-logo.jpg" alt="KDA Logo">
+            
+            <!-- Button to change the image source -->
             <button onclick="changeImage()">Change Image</button>
 
-            <!-- Students can replace image links -->
+            <!-- Alternative image sources can be added in the JavaScript -->
         </section>
 
-        <!-- 5. DASHBOARD COUNTER -->
+        <!-- ============================================================ -->
+        <!-- 5. DASHBOARD COUNTER                                         -->
+        <!-- Purpose: Tracks and displays counter value                   -->
+        <!-- Features: Variable manipulation, event handling              -->
+        <!-- ============================================================ -->
         <section class="card">
             <h2>5. Dashboard Counter</h2>
             <p>Total Visitors: <span id="count">0</span></p>
 
+            <!-- Button to increment the counter -->
             <button onclick="increaseCount()">Increase</button>
+            
+            <!-- Additional counter buttons (commented out) -->
+            <!-- <button onclick="decreaseCount()">Decrease</button> -->
+            <!-- <button onclick="resetCount()">Reset</button> -->
         </section>
 
-        <!-- 6. INTERACTIVE MENU -->
+        <!-- ============================================================ -->
+        <!-- 6. INTERACTIVE MENU                                          -->
+        <!-- Purpose: Shows/hides menu items on button click              -->
+        <!-- Features: Element visibility toggle, conditional logic       -->
+        <!-- ============================================================ -->
         <section class="card">
-            <h2>6. Interactive Menu</h2>
+            <h2>6. Interactive Menu (Toggle)</h2>
 
+            <!-- Button to toggle menu visibility -->
             <button onclick="toggleMenu()">Toggle Menu</button>
 
+            <!-- Navigation menu that can be shown/hidden -->
             <nav id="menu">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -89,77 +173,2256 @@
                 <a href="#">Contact</a>
             </nav>
 
-            <!-- Students can add more menu items -->
+            <!-- Students can add more menu items here -->
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 7. CALCULATOR                                                -->
+        <!-- Purpose: Simple arithmetic operations                        -->
+        <!-- Features: Mathematical calculations, user input              -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>7. Simple Calculator</h2>
+            <p>Perform basic arithmetic operations.</p>
+
+            <!-- Input fields for calculator numbers -->
+            <input type="number" id="num1" placeholder="Enter first number">
+            <input type="number" id="num2" placeholder="Enter second number">
+
+            <!-- Display area for calculator result -->
+            <p>Result: <span id="calcResult">0</span></p>
+
+            <!-- Buttons for different operations -->
+            <button onclick="add()">Add (+)</button>
+            <button onclick="subtract()">Subtract (-)</button>
+            <button onclick="multiply()">Multiply (×)</button>
+            <button onclick="divide()">Divide (÷)</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 8. COLOR CHANGER                                             -->
+        <!-- Purpose: Changes background colors dynamically               -->
+        <!-- Features: Style manipulation, random colors                  -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>8. Background Color Changer</h2>
+            <p>Click the button to change the page background color.</p>
+
+            <!-- Button to change background to random color -->
+            <button onclick="changeBackgroundColor()">Random Color</button>
+            
+            <!-- Buttons for specific colors -->
+            <button onclick="setBackgroundColor('lightblue')">Light Blue</button>
+            <button onclick="setBackgroundColor('lightgreen')">Light Green</button>
+            <button onclick="setBackgroundColor('lightyellow')">Light Yellow</button>
+
+            <!-- Display current color code -->
+            <p>Current Color: <span id="colorCode">#f4f6f8</span></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 9. TIME AND DATE DISPLAY                                     -->
+        <!-- Purpose: Shows current date and time                         -->
+        <!-- Features: Date object, string formatting                     -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>9. Current Date & Time</h2>
+            <p>The current date and time will display below:</p>
+
+            <!-- Display area for date -->
+            <p id="dateDisplay">Loading...</p>
+            
+            <!-- Display area for time -->
+            <p id="timeDisplay">Loading...</p>
+
+            <!-- Button to refresh date/time -->
+            <button onclick="updateDateTime()">Update Date & Time</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 10. TODO LIST                                                -->
+        <!-- Purpose: Add and remove items from a list                    -->
+        <!-- Features: Array manipulation, dynamic HTML creation          -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>10. Simple Todo List</h2>
+            <p>Add tasks to your todo list.</p>
+
+            <!-- Input field to add new todo item -->
+            <input type="text" id="todoInput" placeholder="Enter a new task">
+            
+            <!-- Button to add the task -->
+            <button onclick="addTodo()">Add Task</button>
+
+            <!-- List to display all todo items -->
+            <ul id="todoList" style="margin-top: 15px; list-style: none; padding: 0;">
+                <!-- Todo items will be added here dynamically -->
+            </ul>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 11. STRING METHODS                                           -->
+        <!-- Purpose: Teach common string manipulation methods            -->
+        <!-- Methods: toUpperCase(), toLowerCase(), substring(), split() -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>11. String Methods (Text Manipulation)</h2>
+            <p>Learn how to manipulate text using JavaScript string methods.</p>
+
+            <!-- Input field for text manipulation -->
+            <input type="text" id="stringInput" placeholder="Enter any text here">
+
+            <!-- Display area for results -->
+            <p id="stringOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px;"></p>
+
+            <!-- Buttons for different string operations -->
+            <button onclick="convertToUpperCase()">Convert to UPPERCASE</button>
+            <button onclick="convertToLowerCase()">Convert to lowercase</button>
+            <button onclick="getStringLength()">Get Text Length</button>
+            <button onclick="reverseString()">Reverse Text</button>
+            <button onclick="replaceText()">Replace "a" with "@"</button>
+            <button onclick="extractWords()">Extract Words</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 12. ARRAY METHODS                                            -->
+        <!-- Purpose: Demonstrate array manipulation (map, filter, etc)   -->
+        <!-- Methods: forEach(), map(), filter(), find()                  -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>12. Array Methods (List Operations)</h2>
+            <p>Learn powerful array methods to work with lists of data.</p>
+
+            <!-- Input for adding numbers to array -->
+            <input type="number" id="arrayInput" placeholder="Enter a number">
+            <button onclick="addToArray()">Add Number</button>
+
+            <!-- Display current array -->
+            <p id="arrayDisplay" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0;"></p>
+
+            <!-- Array manipulation buttons -->
+            <button onclick="doubleNumbers()">Double All Numbers</button>
+            <button onclick="filterEvenNumbers()">Show Even Numbers Only</button>
+            <button onclick="findMaxNumber()">Find Maximum Number</button>
+            <button onclick="sortNumbers()">Sort Numbers</button>
+            <button onclick="clearArray()">Clear Array</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 13. CONDITIONAL LOGIC & SWITCH STATEMENTS                   -->
+        <!-- Purpose: Demonstrate if/else, switch, and ternary operators  -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>13. Conditional Logic (If/Else & Switch)</h2>
+            <p>Learn how to make decisions in your code.</p>
+
+            <!-- Input for age calculation -->
+            <input type="number" id="ageInput" placeholder="Enter your age">
+            <button onclick="checkAgeCategory()">Check Age Category</button>
+
+            <!-- Input for grade assignment -->
+            <input type="number" id="gradeInput" placeholder="Enter a score (0-100)">
+            <button onclick="getGradeLetters()">Get Grade Letter</button>
+
+            <!-- Output display -->
+            <p id="conditionalOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 14. LOOPS (FOR, WHILE, FOREACH)                              -->
+        <!-- Purpose: Demonstrate different loop types                    -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>14. Loops (For, While, ForEach)</h2>
+            <p>Learn different ways to repeat code multiple times.</p>
+
+            <!-- Input for loop range -->
+            <input type="number" id="loopNumber" placeholder="Enter a number (1-10)">
+
+            <!-- Loop demonstration buttons -->
+            <button onclick="forLoopExample()">Show For Loop (1 to N)</button>
+            <button onclick="whileLoopExample()">Show While Loop</button>
+            <button onclick="multiplicationTable()">Show Multiplication Table</button>
+            <button onclick="nestedLoopPattern()">Show Pattern (Nested Loop)</button>
+
+            <!-- Output display -->
+            <div id="loopOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px; max-height: 300px; overflow-y: auto; font-family: monospace; white-space: pre-wrap;"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 15. JAVASCRIPT OBJECTS                                       -->
+        <!-- Purpose: Create and work with objects (key-value pairs)      -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>15. JavaScript Objects & Properties</h2>
+            <p>Learn to create and manipulate objects (collections of data).</p>
+
+            <!-- Create a student object -->
+            <p>Create a Student Profile:</p>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="number" id="studentAge" placeholder="Age">
+            <input type="text" id="studentGrade" placeholder="Grade (A-F)">
+            
+            <button onclick="createStudentObject()">Create Profile</button>
+
+            <!-- Display object information -->
+            <p id="objectOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px; white-space: pre-wrap; font-family: monospace;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 16. LOCAL STORAGE (SAVE DATA)                                -->
+        <!-- Purpose: Save user data in browser (persists on page reload)  -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>16. Local Storage (Save & Retrieve Data)</h2>
+            <p>Save data in your browser so it persists even after refresh.</p>
+
+            <!-- Input for storing data -->
+            <input type="text" id="storageKey" placeholder="Data name (e.g., username)">
+            <input type="text" id="storageValue" placeholder="Data value">
+            
+            <button onclick="saveToStorage()">Save Data</button>
+            <button onclick="retrieveFromStorage()">Load Data</button>
+            <button onclick="clearStorage()">Clear All Data</button>
+
+            <!-- Display stored data -->
+            <p id="storageOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 17. CSS DYNAMIC STYLING                                      -->
+        <!-- Purpose: Change CSS styles with JavaScript                   -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>17. CSS Dynamic Styling (Change Styles with JS)</h2>
+            <p>Use JavaScript to change element styles in real-time.</p>
+
+            <!-- Button styling options -->
+            <button onclick="changeFontSize()">Increase Font Size</button>
+            <button onclick="changeBorderStyle()">Change Border Style</button>
+            <button onclick="changeOpacity()">Toggle Transparency</button>
+            <button onclick="changePosition()">Move Element</button>
+            <button onclick="resetStyles()">Reset Styles</button>
+
+            <!-- Element to style -->
+            <div id="styleElement" style="background: #667eea; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; text-align: center; font-size: 16px;">
+                Watch this element change styles! 🎨
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 18. ERROR HANDLING (TRY-CATCH)                               -->
+        <!-- Purpose: Handle errors gracefully                            -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>18. Error Handling (Try-Catch)</h2>
+            <p>Learn to catch and handle errors in your code.</p>
+
+            <!-- Input for division (can cause errors) -->
+            <input type="number" id="divisor" placeholder="Enter divisor">
+            
+            <button onclick="safelyDivideTen()">Divide 10 (With Error Handling)</button>
+
+            <!-- Display error messages -->
+            <p id="errorOutput" style="background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px; border-left: 4px solid #ff6b6b;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 19. SEARCH & FILTER FUNCTIONALITY                            -->
+        <!-- Purpose: Filter data in real-time as user types              -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>19. Search & Filter Data</h2>
+            <p>Filter a list of items as you type.</p>
+
+            <!-- Search input field -->
+            <input type="text" id="searchBox" placeholder="Search fruits..." onkeyup="searchFruits()">
+
+            <!-- Fruit list that gets filtered -->
+            <ul id="fruitList" style="margin-top: 15px; list-style: none; padding: 0;">
+                <!-- Fruits will be displayed here -->
+            </ul>
+
+            <!-- Display count of results -->
+            <p id="searchResults" style="margin-top: 10px; font-weight: bold;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 20. ANIMATIONS TRIGGERED BY JAVASCRIPT                       -->
+        <!-- Purpose: Create smooth animations with CSS triggered by JS   -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>20. Animations & Transitions</h2>
+            <p>Create smooth animations triggered by JavaScript.</p>
+
+            <!-- Animation buttons -->
+            <button onclick="animateBounce()">Bounce Animation</button>
+            <button onclick="animateSpin()">Spin Animation</button>
+            <button onclick="animateSlide()">Slide Animation</button>
+            <button onclick="stopAnimation()">Stop Animation</button>
+
+            <!-- Animated element -->
+            <div id="animationBox" style="width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); margin: 20px auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                Animate!
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 21. FORM EVENTS (ONCHANGE, ONINPUT, ONSUBMIT)                -->
+        <!-- Purpose: Demonstrate different form event handlers           -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>21. Form Events (OnChange, OnInput, OnSubmit)</h2>
+            <p>Learn about different events that trigger on forms.</p>
+
+            <!-- Form with various event handlers -->
+            <input type="text" id="liveInput" placeholder="Type here (OnInput event)" oninput="handleInputEvent()">
+            
+            <select id="countrySelect" onchange="handleChangeEvent()">
+                <option>Select a country...</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Canada</option>
+                <option>Australia</option>
+            </select>
+
+            <!-- Event log display -->
+            <p id="eventLog" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px; min-height: 50px;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 22. DOM TRAVERSAL (PARENT, CHILD, SIBLINGS)                  -->
+        <!-- Purpose: Navigate the DOM tree                               -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>22. DOM Traversal (Parent, Child, Siblings)</h2>
+            <p>Learn to navigate HTML elements using JavaScript.</p>
+
+            <!-- Nested elements to traverse -->
+            <div id="parentDiv" style="background: #f0f0f0; padding: 15px; border-radius: 5px;">
+                <p>Parent Element</p>
+                <div id="childDiv" style="background: #e0e0e0; padding: 10px; margin-top: 10px;">
+                    <p>Child Element</p>
+                    <span id="grandchildSpan" style="display: block; background: #d0d0d0; padding: 5px; margin-top: 5px;">Grandchild Element</span>
+                </div>
+            </div>
+
+            <!-- Traversal buttons -->
+            <button onclick="findParent()">Find Parent</button>
+            <button onclick="findChildren()">Find Children</button>
+            <button onclick="findNextSibling()">Find Next Sibling</button>
+            <button onclick="showDOMPath()">Show DOM Path</button>
+
+            <!-- Result display -->
+            <p id="domOutput" style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; font-family: monospace;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 23. DEBUGGING & CONSOLE METHODS                              -->
+        <!-- Purpose: Learn debugging techniques                          -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>23. Debugging Techniques</h2>
+            <p>Learn to use console methods for debugging (Open DevTools with F12).</p>
+
+            <!-- Debugging buttons -->
+            <button onclick="debugConsoleLog()">Test console.log()</button>
+            <button onclick="debugConsoleInfo()">Test console.info()</button>
+            <button onclick="debugConsoleWarn()">Test console.warn()</button>
+            <button onclick="debugConsoleError()">Test console.error()</button>
+            <button onclick="debugConsoleTable()">Test console.table()</button>
+            <button onclick="debugConsoleGroup()">Test console.group()</button>
+
+            <p style="background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                💡 Tip: Open Developer Tools (F12 or Right-click > Inspect) to see console output!
+            </p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 24. TIMER FUNCTIONS (SETTIMEOUT, SETINTERVAL)                -->
+        <!-- Purpose: Demonstrate time-based execution                    -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>24. Timer Functions (setTimeout & setInterval)</h2>
+            <p>Execute code after a delay or repeatedly at intervals.</p>
+
+            <!-- Timer buttons -->
+            <button onclick="delayedAlert()">Delayed Alert (3 seconds)</button>
+            <button onclick="startCountdown()">Start 10-Second Countdown</button>
+            <button onclick="stopCountdown()">Stop Countdown</button>
+
+            <!-- Countdown display -->
+            <p id="countdownDisplay" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center; font-size: 24px; font-weight: bold;">-</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 25. REGULAR EXPRESSIONS (PATTERN MATCHING)                   -->
+        <!-- Purpose: Validate patterns (email, phone, etc)               -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>25. Regular Expressions (Pattern Validation)</h2>
+            <p>Validate data patterns like emails and phone numbers.</p>
+
+            <!-- Validation inputs -->
+            <input type="text" id="emailInput" placeholder="Enter email">
+            <button onclick="validateEmail()">Validate Email</button>
+
+            <input type="tel" id="phoneInput" placeholder="Enter phone (format: 123-456-7890)">
+            <button onclick="validatePhone()">Validate Phone</button>
+
+            <input type="text" id="urlInput" placeholder="Enter URL">
+            <button onclick="validateURL()">Validate URL</button>
+
+            <!-- Validation results -->
+            <p id="regexOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 26. PROGRESS INDICATOR & VISUAL FEEDBACK                     -->
+        <!-- Purpose: Show progress to user during operations             -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>26. Progress Indicators & Visual Feedback</h2>
+            <p>Show progress bars and visual feedback to users.</p>
+
+            <!-- Progress buttons -->
+            <button onclick="simulateProgress()">Simulate File Upload</button>
+            <button onclick="showLoadingSpinner()">Show Loading Spinner</button>
+
+            <!-- Progress bar -->
+            <div id="progressBar" style="width: 100%; height: 30px; background: #e0e0e0; border-radius: 5px; margin-top: 15px; overflow: hidden;">
+                <div id="progressFill" style="height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); width: 0%; transition: width 0.3s ease; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                    0%
+                </div>
+            </div>
+
+            <!-- Status message -->
+            <p id="progressStatus" style="margin-top: 10px; text-align: center;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 27. API INTEGRATION (FETCH)                                  -->
+        <!-- Purpose: Load external data using Fetch API                  -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>27. API Integration (Fetch Data)</h2>
+            <p>Learn to fetch data from external APIs.</p>
+
+            <!-- API fetch buttons -->
+            <button onclick="fetchUserData()">Fetch Random User</button>
+            <button onclick="fetchJoke()">Fetch Random Joke</button>
+            <button onclick="fetchQuote()">Fetch Random Quote</button>
+
+            <!-- Display fetched data -->
+            <div id="apiOutput" style="background: #f0f0f0; padding: 15px; border-radius: 5px; margin-top: 15px; min-height: 100px; white-space: pre-wrap; font-family: monospace;"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 28. CHEAT SHEET & REFERENCE                                  -->
+        <!-- Purpose: Quick reference for common JavaScript patterns      -->
+        <!-- ============================================================ -->
+        <section class="card">
+            <h2>28. JavaScript Cheat Sheet & Quick Reference</h2>
+            <p>Quick reference for common JavaScript patterns and methods.</p>
+
+            <!-- Cheat sheet sections -->
+            <button onclick="showCheatSheet('variables')">Variables & Data Types</button>
+            <button onclick="showCheatSheet('operators')">Operators</button>
+            <button onclick="showCheatSheet('methods')">String Methods</button>
+            <button onclick="showCheatSheet('arrays')">Array Methods</button>
+
+            <!-- Cheat sheet display -->
+            <pre id="cheatSheetOutput" style="background: #f0f0f0; padding: 15px; border-radius: 5px; margin-top: 15px; overflow-x: auto; font-family: monospace; font-size: 12px;"></pre>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 29. HTML5 FORM INPUTS & VALIDATION                           -->
+        <!-- Purpose: Learn advanced HTML5 input types and validation     -->
+        <!-- Features: Color, Date, Range, Email, URL, Number inputs     -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-forms">
+            <h2>29. HTML5 Form Inputs & Validation</h2>
+            <p>Explore different HTML5 input types with built-in validation.</p>
+
+            <!-- Form with various HTML5 input types -->
+            <form id="advancedForm" class="form-container">
+                <!-- Color picker input -->
+                <div class="form-group">
+                    <label for="colorInput" class="form-label">Pick a Color:</label>
+                    <input type="color" id="colorInput" class="form-input" value="#667eea">
+                    <span id="colorDisplay" class="color-display"></span>
+                </div>
+
+                <!-- Date and Time inputs -->
+                <div class="form-group">
+                    <label for="dateInput" class="form-label">Select Date:</label>
+                    <input type="date" id="dateInput" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="timeInput" class="form-label">Select Time:</label>
+                    <input type="time" id="timeInput" class="form-input">
+                </div>
+
+                <!-- Range slider -->
+                <div class="form-group">
+                    <label for="rangeInput" class="form-label">Adjust Volume (0-100):</label>
+                    <input type="range" id="rangeInput" class="form-input" min="0" max="100" value="50">
+                    <span id="rangeValue" class="range-display">50%</span>
+                </div>
+
+                <!-- Email input with validation -->
+                <div class="form-group">
+                    <label for="emailInput2" class="form-label">Email Address:</label>
+                    <input type="email" id="emailInput2" class="form-input" placeholder="your@email.com">
+                </div>
+
+                <!-- URL input with validation -->
+                <div class="form-group">
+                    <label for="urlInput2" class="form-label">Website URL:</label>
+                    <input type="url" id="urlInput2" class="form-input" placeholder="https://example.com">
+                </div>
+
+                <!-- Number with min/max -->
+                <div class="form-group">
+                    <label for="numberInput" class="form-label">Enter Score (0-100):</label>
+                    <input type="number" id="numberInput" class="form-input" min="0" max="100" step="5">
+                </div>
+
+                <!-- Datalist for suggestions -->
+                <div class="form-group">
+                    <label for="programmingLanguage" class="form-label">Programming Language:</label>
+                    <input type="text" id="programmingLanguage" class="form-input" list="languages">
+                    <datalist id="languages">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Ruby">Ruby</option>
+                    </datalist>
+                </div>
+
+                <!-- Fieldset and Legend -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Preferences</legend>
+                    
+                    <div class="form-group">
+                        <label><input type="checkbox" class="form-checkbox"> Dark Mode</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><input type="checkbox" class="form-checkbox"> Notifications</label>
+                    </div>
+                </fieldset>
+
+                <!-- Form buttons -->
+                <button type="button" onclick="validateFormInputs()" class="form-submit-btn">Validate All</button>
+                <button type="button" onclick="resetFormInputs()" class="form-reset-btn">Reset Form</button>
+            </form>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 30. HTML5 SEMANTIC ELEMENTS                                  -->
+        <!-- Purpose: Learn semantic HTML5 elements                       -->
+        <!-- Features: Article, Figure, Details, Dialog, Aside           -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-semantic">
+            <h2>30. HTML5 Semantic Elements</h2>
+            <p>Learn proper semantic HTML for better structure and SEO.</p>
+
+            <!-- Article element -->
+            <article class="article-example" id="article-main">
+                <h3>Article: Learning JavaScript</h3>
+                <p>This is an article about JavaScript. Articles are independent, self-contained content that can be reused or syndicated.</p>
+                <footer class="article-footer">Published on <time datetime="2026-01-19">January 19, 2026</time></footer>
+            </article>
+
+            <!-- Figure element -->
+            <figure class="figure-example" id="figure-demo">
+                <svg width="100" height="100" style="background: #f0f0f0; border-radius: 5px;">
+                    <circle cx="50" cy="50" r="40" fill="#667eea"></circle>
+                </svg>
+                <figcaption>A simple SVG circle - demonstrates figure element</figcaption>
+            </figure>
+
+            <!-- Details and Summary -->
+            <details class="details-example" id="details-demo">
+                <summary class="summary-title">📖 Click to learn more about semantic HTML</summary>
+                <p style="padding: 10px; background: #f9f9f9; border-radius: 5px; margin-top: 10px;">
+                    Semantic HTML elements describe their meaning in a human and machine-readable way. 
+                    They help search engines and assistive technologies understand content better.
+                </p>
+            </details>
+
+            <!-- Aside element -->
+            <aside class="aside-example" id="aside-demo">
+                <h4>💡 Pro Tips</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>Use semantic tags for better SEO</li>
+                    <li>Improves accessibility for screen readers</li>
+                    <li>Makes code more maintainable</li>
+                </ul>
+            </aside>
+
+            <!-- Button to show dialog -->
+            <button onclick="openDialog()" class="btn-primary" style="margin-top: 15px;">Open Dialog</button>
+        </section>
+
+        <!-- HTML5 Dialog Element -->
+        <dialog class="modal-dialog" id="modalDialog">
+            <article class="dialog-content">
+                <h3>📝 Dialog Box Example</h3>
+                <p>This is a modal dialog box. It can be opened and closed programmatically.</p>
+                <p style="font-size: 0.9em; color: #666;">Dialogs are useful for alerts, forms, and confirmations.</p>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button onclick="closeDialog()" class="btn-primary">Close Dialog</button>
+                </div>
+            </article>
+        </dialog>
+
+        <!-- ============================================================ -->
+        <!-- 31. CANVAS DRAWING                                           -->
+        <!-- Purpose: Learn to draw and animate with Canvas API           -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-canvas">
+            <h2>31. Canvas Drawing & Graphics</h2>
+            <p>Use the Canvas API to draw shapes, text, and create animations.</p>
+
+            <!-- Canvas element -->
+            <canvas id="drawingCanvas" class="canvas-element" width="500" height="300" style="border: 2px solid #667eea; border-radius: 8px; background: white; cursor: crosshair;"></canvas>
+
+            <!-- Canvas drawing buttons -->
+            <div class="button-group" style="margin-top: 15px;">
+                <button onclick="drawRectangle()" class="btn-canvas">Draw Rectangle</button>
+                <button onclick="drawCircle()" class="btn-canvas">Draw Circle</button>
+                <button onclick="drawTriangle()" class="btn-canvas">Draw Triangle</button>
+                <button onclick="drawText()" class="btn-canvas">Draw Text</button>
+                <button onclick="clearCanvas()" class="btn-canvas btn-danger">Clear Canvas</button>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 32. SVG GRAPHICS                                             -->
+        <!-- Purpose: Learn scalable vector graphics with SVG             -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-svg">
+            <h2>32. SVG Graphics (Scalable Vector Graphics)</h2>
+            <p>Create scalable vector graphics that look perfect at any size.</p>
+
+            <!-- SVG container -->
+            <svg width="100%" height="300" viewBox="0 0 500 300" class="svg-container" id="svgContainer">
+                <!-- Define gradients -->
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Background rectangle -->
+                <rect width="500" height="300" fill="#f9f9f9" rx="10"></rect>
+
+                <!-- Decorative shapes -->
+                <circle cx="80" cy="80" r="40" fill="url(#grad1)"></circle>
+                <rect x="150" y="40" width="100" height="80" fill="#667eea" rx="8"></rect>
+                <polygon points="350,40 400,120 300,120" fill="#764ba2"></polygon>
+
+                <!-- Text in SVG -->
+                <text x="250" y="200" text-anchor="middle" font-size="24" fill="#333" font-weight="bold">SVG Graphics</text>
+            </svg>
+
+            <!-- Interactive SVG buttons -->
+            <button onclick="animateSVG()" class="btn-primary" style="margin-top: 15px;">Animate SVG</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 33. DATA ATTRIBUTES & DATASET                                -->
+        <!-- Purpose: Store custom data on HTML elements                  -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-dataset">
+            <h2>33. HTML5 Data Attributes (data-*)</h2>
+            <p>Store custom data on HTML elements using data attributes.</p>
+
+            <!-- Elements with data attributes -->
+            <div class="data-item" data-id="101" data-product="Laptop" data-price="999" data-stock="5">
+                <strong>Product 1:</strong> Laptop - $999 <button onclick="showProductInfo(this)" class="btn-small">Info</button>
+            </div>
+
+            <div class="data-item" data-id="102" data-product="Mouse" data-price="29" data-stock="50">
+                <strong>Product 2:</strong> Mouse - $29 <button onclick="showProductInfo(this)" class="btn-small">Info</button>
+            </div>
+
+            <div class="data-item" data-id="103" data-product="Keyboard" data-price="79" data-stock="15">
+                <strong>Product 3:</strong> Keyboard - $79 <button onclick="showProductInfo(this)" class="btn-small">Info</button>
+            </div>
+
+            <!-- Display data info -->
+            <p id="dataOutput" style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 15px;"></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 34. MEDIA ELEMENTS (AUDIO & VIDEO)                           -->
+        <!-- Purpose: Embed and control media with HTML5                  -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-media">
+            <h2>34. HTML5 Audio & Video Elements</h2>
+            <p>Embed audio and video with native controls and JavaScript.</p>
+
+            <!-- Audio player -->
+            <h4 class="media-title">🎵 Audio Player</h4>
+            <audio id="audioPlayer" class="media-player" controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button onclick="playAudio()" class="btn-small">Play</button>
+            <button onclick="pauseAudio()" class="btn-small">Pause</button>
+            <button onclick="stopAudio()" class="btn-small">Stop</button>
+
+            <!-- Video player -->
+            <h4 class="media-title" style="margin-top: 20px;">🎬 Video Player</h4>
+            <video id="videoPlayer" class="media-player" width="100%" controls style="max-width: 500px; background: #000; border-radius: 8px;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 35. PROGRESS & METER ELEMENTS                                -->
+        <!-- Purpose: Display measurements and progress visually          -->
+        <!-- ============================================================ -->
+        <section class="card" id="section-progress">
+            <h2>35. Progress & Meter Elements</h2>
+            <p>Display progress bars and measurement values.</p>
+
+            <!-- Progress element -->
+            <h4>File Upload Progress:</h4>
+            <progress id="progressElement" class="progress-bar" max="100" value="70"></progress>
+            <span id="progressPercent">70%</span>
+
+            <button onclick="increaseProgress()" class="btn-small" style="margin-top: 10px;">Increase</button>
+
+            <!-- Meter element (for gauge-like displays) -->
+            <h4 style="margin-top: 20px;">Storage Usage:</h4>
+            <meter id="storageMeter" class="meter-element" min="0" max="100" low="30" high="80" value="65"></meter>
+            <span>65% Used</span>
         </section>
 
     </main>
 
     <!-- ================= FOOTER ================= -->
     <footer>
-        <p>© 2026 King David Academy | Grade 11 IT</p>
+        <p>© 2026 King David Academy</p>
     </footer>
 
     <!-- ================= JAVASCRIPT SECTION ================= -->
     <script>
-        // Displays welcome message when page loads
+        // ============================================================
+        // WELCOME MESSAGE FUNCTION
+        // Runs automatically when page loads (onload event)
+        // Purpose: Greets the user when visiting the website
+        // ============================================================
         function welcomeMessage() {
             alert("Welcome to the JavaScript Demo Website");
         }
 
-        // LOGIN VALIDATION FUNCTION
+        // ============================================================
+        // 1. LOGIN VALIDATION FUNCTION
+        // Purpose: Validates username and password
+        // Process: 
+        //   1. Get values from input fields
+        //   2. Check if fields are empty
+        //   3. Compare with stored credentials
+        //   4. Display appropriate message
+        // ============================================================
         function login() {
+            // Get username from input field with id="username"
             let user = document.getElementById("username").value;
+            
+            // Get password from input field with id="password"
             let pass = document.getElementById("password").value;
 
-            // Students can change credentials here
+            // Check if username or password field is empty
             if (user === "" || pass === "") {
                 alert("Please fill in all fields");
-            } else if (user === "admin" && pass === "1234") {
-                alert("Login successful");
-            } else {
+            } 
+            // Check if credentials match (correct username AND password)
+            else if (user === "admin" && pass === "1234") {
+                alert("Login successful! Welcome Admin");
+            } 
+            // If credentials don't match
+            else {
                 alert("Incorrect username or password");
             }
+            
+            // NOTE: To change credentials, modify "admin" and "1234" above
         }
 
-        // FORM VALIDATION FUNCTION
+        // ============================================================
+        // 2. FORM VALIDATION FUNCTION
+        // Purpose: Validates form data before submission
+        // Checks: Name is not empty, Age is at least 18
+        // ============================================================
         function validateForm() {
+            // Get the name value from input field
             let name = document.getElementById("name").value;
+            
+            // Get the age value from number input field
             let age = document.getElementById("age").value;
 
+            // Validation Check 1: Name cannot be empty
             if (name === "") {
                 alert("Name is required");
-            } else if (age < 18) {
+            } 
+            // Validation Check 2: Age must be 18 or older
+            else if (age < 18) {
                 alert("You must be at least 18 years old");
-            } else {
-                alert("Form submitted successfully");
+            } 
+            // All validations passed
+            else {
+                alert("Form submitted successfully! Name: " + name + ", Age: " + age);
             }
         }
 
-        // DOM MANIPULATION FUNCTION
+        // ============================================================
+        // 3. DOM MANIPULATION FUNCTION
+        // Purpose: Changes the text content of an HTML element
+        // DOM = Document Object Model (allows JS to access HTML)
+        // ============================================================
         function changeText() {
+            // Find the element with id="demo"
+            // Change its innerHTML (the content between tags)
             document.getElementById("demo").innerHTML =
-                "The content has been updated using JavaScript!";
+                "✓ The content has been updated using JavaScript!";
         }
 
-        // IMAGE CHANGE FUNCTION
+        // ============================================================
+        // 4. IMAGE CHANGE FUNCTION
+        // Purpose: Dynamically changes the image source
+        // Used in: Image Gallery section
+        // ============================================================
         function changeImage() {
+            // Get the image element with id="myImage"
+            // Change its src (source/path) to a new image URL
             document.getElementById("myImage").src =
-                "https://via.placeholder.com/250/3498db/ffffff";
+                "/kda-logo.jpg";
         }
 
-        // COUNTER FUNCTION
+        // ============================================================
+        // 5. COUNTER VARIABLE AND FUNCTION
+        // Purpose: Tracks number of clicks/visitors
+        // Variable: counter = starts at 0
+        // ============================================================
+        
+        // Global variable to store counter value
         let counter = 0;
+
         function increaseCount() {
+            // Increase counter by 1
             counter++;
+            
+            // Update the display with new counter value
             document.getElementById("count").innerHTML = counter;
         }
 
-        // INTERACTIVE MENU FUNCTION
+        // Additional counter functions (can be uncommented)
+        function decreaseCount() {
+            // Decrease counter by 1
+            if (counter > 0) {
+                counter--;
+                document.getElementById("count").innerHTML = counter;
+            }
+        }
+
+        function resetCount() {
+            // Reset counter back to 0
+            counter = 0;
+            document.getElementById("count").innerHTML = counter;
+        }
+
+        // ============================================================
+        // 6. TOGGLE MENU FUNCTION
+        // Purpose: Shows/hides the menu when button is clicked
+        // Logic: If menu is visible, hide it. If hidden, show it.
+        // ============================================================
         function toggleMenu() {
+            // Get the menu element
             let menu = document.getElementById("menu");
+            
+            // Ternary operator: if condition ? true_value : false_value
+            // If display is "block" (visible), set to "none" (hidden)
+            // Otherwise, set to "block" (visible)
             menu.style.display =
                 menu.style.display === "block" ? "none" : "block";
         }
+
+        // ============================================================
+        // 7. CALCULATOR FUNCTIONS
+        // Purpose: Perform arithmetic operations
+        // Operations: Addition, Subtraction, Multiplication, Division
+        // ============================================================
+
+        // Function to add two numbers
+        function add() {
+            // Get first number from input field
+            let num1 = parseFloat(document.getElementById("num1").value);
+            
+            // Get second number from input field
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            // Check if inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+            
+            // Calculate sum and display result
+            let result = num1 + num2;
+            document.getElementById("calcResult").innerHTML = result;
+        }
+
+        // Function to subtract two numbers
+        function subtract() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+            
+            // Calculate difference
+            let result = num1 - num2;
+            document.getElementById("calcResult").innerHTML = result;
+        }
+
+        // Function to multiply two numbers
+        function multiply() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+            
+            // Calculate product
+            let result = num1 * num2;
+            document.getElementById("calcResult").innerHTML = result;
+        }
+
+        // Function to divide two numbers
+        function divide() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+            
+            // Check for division by zero
+            if (num2 === 0) {
+                alert("Cannot divide by zero!");
+                return;
+            }
+            
+            // Calculate quotient
+            let result = num1 / num2;
+            document.getElementById("calcResult").innerHTML = result.toFixed(2);
+        }
+
+        // ============================================================
+        // 8. COLOR CHANGER FUNCTIONS
+        // Purpose: Change background color of the page
+        // Methods: Random color or specific color selection
+        // ============================================================
+
+        // Function to change background to random color
+        function changeBackgroundColor() {
+            // Generate random RGB values (0-255)
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            
+            // Create RGB color string
+            let randomColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            
+            // Apply color to body background
+            document.body.style.backgroundColor = randomColor;
+            
+            // Display the color code
+            let hexColor = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+            document.getElementById("colorCode").innerHTML = hexColor;
+        }
+
+        // Function to set background to specific color
+        function setBackgroundColor(color) {
+            // Apply the color to page background
+            document.body.style.backgroundColor = color;
+            
+            // Update color code display
+            document.getElementById("colorCode").innerHTML = color;
+        }
+
+        // ============================================================
+        // 9. DATE AND TIME FUNCTIONS
+        // Purpose: Display and update current date and time
+        // Uses: JavaScript Date object
+        // ============================================================
+
+        // Function to update and display date and time
+        function updateDateTime() {
+            // Create new Date object (gets current date and time)
+            let now = new Date();
+            
+            // Extract date components
+            let day = now.getDate();
+            let month = now.getMonth() + 1; // Month is 0-indexed
+            let year = now.getFullYear();
+            
+            // Extract time components
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            // Format date string
+            let dateString = day + "/" + month + "/" + year;
+            
+            // Format time string (add leading zeros if needed)
+            let timeString = 
+                (hours < 10 ? "0" : "") + hours + ":" +
+                (minutes < 10 ? "0" : "") + minutes + ":" +
+                (seconds < 10 ? "0" : "") + seconds;
+            
+            // Display date and time
+            document.getElementById("dateDisplay").innerHTML = "📅 Date: " + dateString;
+            document.getElementById("timeDisplay").innerHTML = "⏰ Time: " + timeString;
+        }
+
+        // Call updateDateTime when page loads
+        window.onload = function() {
+            updateDateTime();
+            // Update time every second (1000 milliseconds)
+            setInterval(updateDateTime, 1000);
+        };
+
+        // ============================================================
+        // 10. TODO LIST FUNCTIONS
+        // Purpose: Add and remove tasks from a list
+        // Uses: Arrays, DOM manipulation, event handling
+        // ============================================================
+
+        // Array to store todo items
+        let todos = [];
+
+        // Function to add new todo item
+        function addTodo() {
+            // Get input value from todo input field
+            let todoText = document.getElementById("todoInput").value;
+            
+            // Check if input is not empty
+            if (todoText === "") {
+                alert("Please enter a task");
+                return;
+            }
+            
+            // Add the task to todos array
+            todos.push(todoText);
+            
+            // Clear the input field
+            document.getElementById("todoInput").value = "";
+            
+            // Refresh the display
+            displayTodos();
+        }
+
+        // Function to display all todos
+        function displayTodos() {
+            // Get the todo list element
+            let todoList = document.getElementById("todoList");
+            
+            // Clear the current list
+            todoList.innerHTML = "";
+            
+            // Loop through each todo item
+            for (let i = 0; i < todos.length; i++) {
+                // Create a new list item
+                let li = document.createElement("li");
+                
+                // Style the list item
+                li.style.padding = "10px";
+                li.style.margin = "5px 0";
+                li.style.backgroundColor = "#f0f0f0";
+                li.style.borderRadius = "5px";
+                li.style.display = "flex";
+                li.style.justifyContent = "space-between";
+                li.style.alignItems = "center";
+                
+                // Create text content with task number
+                let taskText = (i + 1) + ". " + todos[i];
+                li.innerHTML = taskText;
+                
+                // Create delete button for this task
+                let deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.style.marginLeft = "10px";
+                deleteBtn.onclick = function() {
+                    // Remove the item from array at index i
+                    todos.splice(i, 1);
+                    // Refresh display
+                    displayTodos();
+                };
+                
+                // Add delete button to list item
+                li.appendChild(deleteBtn);
+                
+                // Add list item to the todo list
+                todoList.appendChild(li);
+            }
+        }
+
+        // Allow adding todo by pressing Enter key
+        document.addEventListener("DOMContentLoaded", function() {
+            let todoInput = document.getElementById("todoInput");
+            if (todoInput) {
+                todoInput.addEventListener("keypress", function(event) {
+                    if (event.key === "Enter") {
+                        addTodo();
+                    }
+                });
+            }
+            // Initialize fruit list for search feature
+            displayFruits();
+        });
+
+        // ============================================================
+        // 11. STRING METHODS FUNCTIONS
+        // Purpose: Demonstrate string manipulation methods
+        // ============================================================
+
+        function convertToUpperCase() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            let result = text.toUpperCase();
+            document.getElementById("stringOutput").innerHTML = "Result: " + result;
+        }
+
+        function convertToLowerCase() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            let result = text.toLowerCase();
+            document.getElementById("stringOutput").innerHTML = "Result: " + result;
+        }
+
+        function getStringLength() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            let length = text.length;
+            document.getElementById("stringOutput").innerHTML = "Text length: " + length + " characters";
+        }
+
+        function reverseString() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            // Split string into array, reverse it, join back together
+            let reversed = text.split("").reverse().join("");
+            document.getElementById("stringOutput").innerHTML = "Reversed: " + reversed;
+        }
+
+        function replaceText() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            // Replace all 'a' with '@'
+            let replaced = text.replace(/a/gi, "@");
+            document.getElementById("stringOutput").innerHTML = "Replaced: " + replaced;
+        }
+
+        function extractWords() {
+            let text = document.getElementById("stringInput").value;
+            if (text === "") {
+                document.getElementById("stringOutput").innerHTML = "Please enter text first!";
+                return;
+            }
+            // Split text into words
+            let words = text.split(" ");
+            document.getElementById("stringOutput").innerHTML = "Words count: " + words.length + "\nWords: " + words.join(", ");
+        }
+
+        // ============================================================
+        // 12. ARRAY METHODS FUNCTIONS
+        // Purpose: Demonstrate array manipulation
+        // ============================================================
+
+        let numberArray = [];
+
+        function addToArray() {
+            let input = document.getElementById("arrayInput").value;
+            let num = parseFloat(input);
+            
+            if (isNaN(num)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+            
+            numberArray.push(num);
+            document.getElementById("arrayInput").value = "";
+            updateArrayDisplay();
+        }
+
+        function updateArrayDisplay() {
+            if (numberArray.length === 0) {
+                document.getElementById("arrayDisplay").innerHTML = "Array is empty. Add numbers to get started!";
+            } else {
+                document.getElementById("arrayDisplay").innerHTML = "Array: [" + numberArray.join(", ") + "]";
+            }
+        }
+
+        function doubleNumbers() {
+            if (numberArray.length === 0) {
+                alert("Array is empty!");
+                return;
+            }
+            // Use map() to create a new array with doubled values
+            let doubled = numberArray.map(function(num) {
+                return num * 2;
+            });
+            document.getElementById("arrayDisplay").innerHTML = "Doubled: [" + doubled.join(", ") + "]";
+        }
+
+        function filterEvenNumbers() {
+            if (numberArray.length === 0) {
+                alert("Array is empty!");
+                return;
+            }
+            // Use filter() to keep only even numbers
+            let evens = numberArray.filter(function(num) {
+                return num % 2 === 0;
+            });
+            if (evens.length === 0) {
+                document.getElementById("arrayDisplay").innerHTML = "No even numbers found!";
+            } else {
+                document.getElementById("arrayDisplay").innerHTML = "Even numbers: [" + evens.join(", ") + "]";
+            }
+        }
+
+        function findMaxNumber() {
+            if (numberArray.length === 0) {
+                alert("Array is empty!");
+                return;
+            }
+            // Use Math.max() to find largest number
+            let max = Math.max(...numberArray);
+            document.getElementById("arrayDisplay").innerHTML = "Maximum number: " + max;
+        }
+
+        function sortNumbers() {
+            if (numberArray.length === 0) {
+                alert("Array is empty!");
+                return;
+            }
+            // Sort numbers (note: must convert to numbers for proper sorting)
+            let sorted = numberArray.slice().sort(function(a, b) {
+                return a - b;
+            });
+            document.getElementById("arrayDisplay").innerHTML = "Sorted: [" + sorted.join(", ") + "]";
+        }
+
+        function clearArray() {
+            numberArray = [];
+            updateArrayDisplay();
+        }
+
+        // ============================================================
+        // 13. CONDITIONAL LOGIC FUNCTIONS
+        // Purpose: Demonstrate if/else and switch statements
+        // ============================================================
+
+        function checkAgeCategory() {
+            let age = parseInt(document.getElementById("ageInput").value);
+            let category;
+
+            if (isNaN(age)) {
+                alert("Please enter a valid age!");
+                return;
+            }
+
+            // Using if/else if/else
+            if (age < 13) {
+                category = "🧒 Child";
+            } else if (age < 18) {
+                category = "👦 Teenager";
+            } else if (age < 65) {
+                category = "👨 Adult";
+            } else {
+                category = "👴 Senior";
+            }
+
+            document.getElementById("conditionalOutput").innerHTML = "You are: " + category;
+        }
+
+        function getGradeLetters() {
+            let score = parseInt(document.getElementById("gradeInput").value);
+            let grade;
+
+            if (isNaN(score) || score < 0 || score > 100) {
+                alert("Please enter a valid score (0-100)!");
+                return;
+            }
+
+            // Using switch statement
+            switch (true) {
+                case score >= 90:
+                    grade = "A - Excellent! 🌟";
+                    break;
+                case score >= 80:
+                    grade = "B - Good Job! 👍";
+                    break;
+                case score >= 70:
+                    grade = "C - Satisfactory 👌";
+                    break;
+                case score >= 60:
+                    grade = "D - Passing 🙂";
+                    break;
+                default:
+                    grade = "F - Try Again 💪";
+            }
+
+            document.getElementById("conditionalOutput").innerHTML = "Score: " + score + " → Grade: " + grade;
+        }
+
+        // ============================================================
+        // 14. LOOP FUNCTIONS
+        // Purpose: Demonstrate different loop types
+        // ============================================================
+
+        function forLoopExample() {
+            let num = parseInt(document.getElementById("loopNumber").value);
+            if (isNaN(num) || num < 1 || num > 10) {
+                alert("Please enter a number between 1-10!");
+                return;
+            }
+
+            let output = "For Loop (counting 1 to " + num + "):\n";
+            // Traditional for loop
+            for (let i = 1; i <= num; i++) {
+                output += i + " ";
+            }
+
+            document.getElementById("loopOutput").innerHTML = output;
+        }
+
+        function whileLoopExample() {
+            let num = parseInt(document.getElementById("loopNumber").value);
+            if (isNaN(num) || num < 1 || num > 10) {
+                alert("Please enter a number between 1-10!");
+                return;
+            }
+
+            let output = "While Loop (counting down from " + num + "):\n";
+            let i = num;
+            // While loop
+            while (i > 0) {
+                output += i + " ";
+                i--;
+            }
+
+            document.getElementById("loopOutput").innerHTML = output;
+        }
+
+        function multiplicationTable() {
+            let num = parseInt(document.getElementById("loopNumber").value);
+            if (isNaN(num) || num < 1 || num > 10) {
+                alert("Please enter a number between 1-10!");
+                return;
+            }
+
+            let output = "Multiplication Table of " + num + ":\n";
+            // Using forEach loop
+            for (let i = 1; i <= 10; i++) {
+                output += num + " × " + i + " = " + (num * i) + "\n";
+            }
+
+            document.getElementById("loopOutput").innerHTML = output;
+        }
+
+        function nestedLoopPattern() {
+            let num = parseInt(document.getElementById("loopNumber").value);
+            if (isNaN(num) || num < 1 || num > 10) {
+                alert("Please enter a number between 1-10!");
+                return;
+            }
+
+            let output = "Number Pattern (Nested Loop):\n";
+            // Nested loops to create a pattern
+            for (let i = 1; i <= num; i++) {
+                let row = "";
+                for (let j = 1; j <= i; j++) {
+                    row += j + " ";
+                }
+                output += row + "\n";
+            }
+
+            document.getElementById("loopOutput").innerHTML = output;
+        }
+
+        // ============================================================
+        // 15. JAVASCRIPT OBJECTS FUNCTIONS
+        // Purpose: Create and work with objects
+        // ============================================================
+
+        function createStudentObject() {
+            let name = document.getElementById("studentName").value;
+            let age = document.getElementById("studentAge").value;
+            let grade = document.getElementById("studentGrade").value;
+
+            if (name === "" || age === "" || grade === "") {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            // Create a student object (key-value pairs)
+            let student = {
+                name: name,
+                age: parseInt(age),
+                grade: grade,
+                enrolled: true,
+                subjects: ["Math", "Science", "English"],
+                getInfo: function() {
+                    return "Name: " + this.name + ", Age: " + this.age + ", Grade: " + this.grade;
+                }
+            };
+
+            let output = "Student Object Created:\n\n";
+            output += "Object Properties:\n";
+            output += "- name: " + student.name + "\n";
+            output += "- age: " + student.age + "\n";
+            output += "- grade: " + student.grade + "\n";
+            output += "- enrolled: " + student.enrolled + "\n";
+            output += "- subjects: " + student.subjects.join(", ") + "\n";
+            output += "\nCalling object method:\n";
+            output += student.getInfo();
+
+            document.getElementById("objectOutput").innerHTML = output;
+        }
+
+        // ============================================================
+        // 16. LOCAL STORAGE FUNCTIONS
+        // Purpose: Save and retrieve data in browser
+        // ============================================================
+
+        function saveToStorage() {
+            let key = document.getElementById("storageKey").value;
+            let value = document.getElementById("storageValue").value;
+
+            if (key === "" || value === "") {
+                alert("Please fill in both fields!");
+                return;
+            }
+
+            // Save to browser's local storage
+            localStorage.setItem(key, value);
+            document.getElementById("storageOutput").innerHTML = "✓ Saved: " + key + " = " + value;
+        }
+
+        function retrieveFromStorage() {
+            let key = document.getElementById("storageKey").value;
+
+            if (key === "") {
+                alert("Please enter a data name to retrieve!");
+                return;
+            }
+
+            // Get from local storage
+            let value = localStorage.getItem(key);
+
+            if (value === null) {
+                document.getElementById("storageOutput").innerHTML = "No data found for: " + key;
+            } else {
+                document.getElementById("storageOutput").innerHTML = "Retrieved: " + key + " = " + value;
+            }
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById("storageOutput").innerHTML = "✓ All data cleared from storage!";
+        }
+
+        // ============================================================
+        // 17. CSS DYNAMIC STYLING FUNCTIONS
+        // Purpose: Change element styles with JavaScript
+        // ============================================================
+
+        let fontSize = 16;
+        let borderStyle = 0;
+        let opacity = 1;
+        let positionX = 0;
+
+        function changeFontSize() {
+            fontSize += 2;
+            document.getElementById("styleElement").style.fontSize = fontSize + "px";
+        }
+
+        function changeBorderStyle() {
+            let styles = ["solid", "dashed", "dotted", "double"];
+            borderStyle = (borderStyle + 1) % styles.length;
+            document.getElementById("styleElement").style.border = "3px " + styles[borderStyle] + " #333";
+        }
+
+        function changeOpacity() {
+            opacity = opacity === 1 ? 0.5 : 1;
+            document.getElementById("styleElement").style.opacity = opacity;
+        }
+
+        function changePosition() {
+            positionX = (positionX + 20) % 200;
+            document.getElementById("styleElement").style.marginLeft = positionX + "px";
+        }
+
+        function resetStyles() {
+            fontSize = 16;
+            borderStyle = 0;
+            opacity = 1;
+            positionX = 0;
+            let element = document.getElementById("styleElement");
+            element.style.fontSize = "16px";
+            element.style.border = "none";
+            element.style.opacity = "1";
+            element.style.marginLeft = "0px";
+        }
+
+        // ============================================================
+        // 18. ERROR HANDLING FUNCTIONS
+        // Purpose: Demonstrate try-catch error handling
+        // ============================================================
+
+        function safelyDivideTen() {
+            let divisor = document.getElementById("divisor").value;
+
+            try {
+                if (divisor === "") {
+                    throw new Error("Please enter a divisor!");
+                }
+
+                divisor = parseFloat(divisor);
+
+                if (isNaN(divisor)) {
+                    throw new Error("Divisor must be a number!");
+                }
+
+                if (divisor === 0) {
+                    throw new Error("Cannot divide by zero!");
+                }
+
+                let result = 10 / divisor;
+                document.getElementById("errorOutput").innerHTML = "✓ Result: 10 ÷ " + divisor + " = " + result.toFixed(2);
+            } catch (error) {
+                // This code runs if an error is caught
+                document.getElementById("errorOutput").innerHTML = "❌ Error: " + error.message;
+            }
+        }
+
+        // ============================================================
+        // 19. SEARCH & FILTER FUNCTIONS
+        // Purpose: Filter data as user types
+        // ============================================================
+
+        let fruits = ["Apple", "Apricot", "Banana", "Blueberry", "Cherry", "Cranberry", "Date", "Grape", "Grapefruit", "Kiwi"];
+
+        function displayFruits(searchTerm = "") {
+            let fruitList = document.getElementById("fruitList");
+            fruitList.innerHTML = "";
+
+            // Filter fruits based on search term
+            let filtered = fruits.filter(function(fruit) {
+                return fruit.toLowerCase().includes(searchTerm.toLowerCase());
+            });
+
+            // Display filtered fruits
+            filtered.forEach(function(fruit) {
+                let li = document.createElement("li");
+                li.style.padding = "8px";
+                li.style.backgroundColor = "#f0f0f0";
+                li.style.margin = "5px 0";
+                li.style.borderRadius = "4px";
+                li.innerHTML = "🍎 " + fruit;
+                fruitList.appendChild(li);
+            });
+
+            let count = filtered.length;
+            document.getElementById("searchResults").innerHTML = "Found " + count + " fruit(s)";
+        }
+
+        function searchFruits() {
+            let searchTerm = document.getElementById("searchBox").value;
+            displayFruits(searchTerm);
+        }
+
+        // ============================================================
+        // 20. ANIMATION FUNCTIONS
+        // Purpose: Trigger CSS animations with JavaScript
+        // ============================================================
+
+        function animateBounce() {
+            let box = document.getElementById("animationBox");
+            box.style.animation = "none";
+            setTimeout(function() {
+                box.style.animation = "bounce 0.6s";
+            }, 10);
+        }
+
+        function animateSpin() {
+            let box = document.getElementById("animationBox");
+            box.style.animation = "none";
+            setTimeout(function() {
+                box.style.animation = "spin 1s";
+            }, 10);
+        }
+
+        function animateSlide() {
+            let box = document.getElementById("animationBox");
+            box.style.animation = "none";
+            setTimeout(function() {
+                box.style.animation = "slide 0.8s";
+            }, 10);
+        }
+
+        function stopAnimation() {
+            let box = document.getElementById("animationBox");
+            box.style.animation = "none";
+        }
+
+        // ============================================================
+        // 21. FORM EVENT FUNCTIONS
+        // Purpose: Handle different form events
+        // ============================================================
+
+        let eventLog = [];
+
+        function handleInputEvent() {
+            let value = document.getElementById("liveInput").value;
+            let log = "⌨️ OnInput Event - You typed: " + value + " (" + value.length + " chars)";
+            document.getElementById("eventLog").innerHTML = log;
+        }
+
+        function handleChangeEvent() {
+            let value = document.getElementById("countrySelect").value;
+            let log = "🔄 OnChange Event - You selected: " + value;
+            document.getElementById("eventLog").innerHTML = log;
+        }
+
+        // ============================================================
+        // 22. DOM TRAVERSAL FUNCTIONS
+        // Purpose: Navigate the DOM tree
+        // ============================================================
+
+        function findParent() {
+            let child = document.getElementById("childDiv");
+            let parent = child.parentElement;
+            document.getElementById("domOutput").innerHTML = "Parent element: " + parent.tagName + "\nClass: " + parent.id;
+        }
+
+        function findChildren() {
+            let parent = document.getElementById("parentDiv");
+            let children = parent.children;
+            let output = "Parent has " + children.length + " direct children:\n";
+            for (let i = 0; i < children.length; i++) {
+                output += (i + 1) + ". " + children[i].tagName + "\n";
+            }
+            document.getElementById("domOutput").innerHTML = output;
+        }
+
+        function findNextSibling() {
+            let element = document.getElementById("childDiv");
+            let sibling = element.nextElementSibling;
+            if (sibling) {
+                document.getElementById("domOutput").innerHTML = "Next sibling: " + sibling.tagName;
+            } else {
+                document.getElementById("domOutput").innerHTML = "No next sibling found";
+            }
+        }
+
+        function showDOMPath() {
+            let element = document.getElementById("grandchildSpan");
+            let path = "DOM Path:\n";
+            let current = element;
+
+            while (current) {
+                path += current.tagName;
+                if (current.id) {
+                    path += " #" + current.id;
+                }
+                path += "\n↑\n";
+                current = current.parentElement;
+            }
+
+            document.getElementById("domOutput").innerHTML = path;
+        }
+
+        // ============================================================
+        // 23. DEBUGGING FUNCTIONS
+        // Purpose: Demonstrate console debugging methods
+        // ============================================================
+
+        function debugConsoleLog() {
+            console.log("This is a regular log message");
+            alert("Check the browser console (F12) to see the log!");
+        }
+
+        function debugConsoleInfo() {
+            console.info("This is an info message - usually blue in most browsers");
+            alert("Check the browser console (F12)!");
+        }
+
+        function debugConsoleWarn() {
+            console.warn("This is a warning message - usually yellow");
+            alert("Check the browser console (F12)!");
+        }
+
+        function debugConsoleError() {
+            console.error("This is an error message - usually red");
+            alert("Check the browser console (F12)!");
+        }
+
+        function debugConsoleTable() {
+            let data = [
+                {name: "Alice", age: 25, city: "New York"},
+                {name: "Bob", age: 30, city: "Los Angeles"},
+                {name: "Charlie", age: 28, city: "Chicago"}
+            ];
+            console.table(data);
+            alert("Check the browser console (F12) to see the table!");
+        }
+
+        function debugConsoleGroup() {
+            console.group("User Information");
+            console.log("Name: John Doe");
+            console.log("Age: 30");
+            console.log("Email: john@example.com");
+            console.groupEnd();
+            alert("Check the browser console (F12)!");
+        }
+
+        // ============================================================
+        // 24. TIMER FUNCTIONS
+        // Purpose: setTimeout and setInterval examples
+        // ============================================================
+
+        let countdownInterval;
+
+        function delayedAlert() {
+            document.getElementById("countdownDisplay").innerHTML = "Waiting...";
+            // Execute code after 3 seconds (3000 milliseconds)
+            setTimeout(function() {
+                alert("This message appeared after 3 seconds!");
+                document.getElementById("countdownDisplay").innerHTML = "-";
+            }, 3000);
+        }
+
+        function startCountdown() {
+            let seconds = 10;
+            document.getElementById("countdownDisplay").innerHTML = seconds;
+
+            // Execute code repeatedly every 1 second
+            countdownInterval = setInterval(function() {
+                seconds--;
+                document.getElementById("countdownDisplay").innerHTML = seconds;
+
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdownDisplay").innerHTML = "Time's up!";
+                    alert("Countdown finished!");
+                }
+            }, 1000);
+        }
+
+        function stopCountdown() {
+            clearInterval(countdownInterval);
+            document.getElementById("countdownDisplay").innerHTML = "-";
+        }
+
+        // ============================================================
+        // 25. REGULAR EXPRESSION FUNCTIONS
+        // Purpose: Validate patterns with regex
+        // ============================================================
+
+        function validateEmail() {
+            let email = document.getElementById("emailInput").value;
+            // Regular expression for email validation
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailRegex.test(email)) {
+                document.getElementById("regexOutput").innerHTML = "✓ Valid email: " + email;
+            } else {
+                document.getElementById("regexOutput").innerHTML = "❌ Invalid email format!";
+            }
+        }
+
+        function validatePhone() {
+            let phone = document.getElementById("phoneInput").value;
+            // Regular expression for phone (format: 123-456-7890)
+            let phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+
+            if (phoneRegex.test(phone)) {
+                document.getElementById("regexOutput").innerHTML = "✓ Valid phone: " + phone;
+            } else {
+                document.getElementById("regexOutput").innerHTML = "❌ Invalid phone format! Use: 123-456-7890";
+            }
+        }
+
+        function validateURL() {
+            let url = document.getElementById("urlInput").value;
+            // Regular expression for URL validation
+            let urlRegex = /^https?:\/\/.+\..+/;
+
+            if (urlRegex.test(url)) {
+                document.getElementById("regexOutput").innerHTML = "✓ Valid URL: " + url;
+            } else {
+                document.getElementById("regexOutput").innerHTML = "❌ Invalid URL! Use: http://example.com or https://example.com";
+            }
+        }
+
+        // ============================================================
+        // 26. PROGRESS INDICATOR FUNCTIONS
+        // Purpose: Show progress to user
+        // ============================================================
+
+        function simulateProgress() {
+            let progress = 0;
+            let increment = Math.random() * 30;
+
+            let interval = setInterval(function() {
+                progress += increment;
+
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    document.getElementById("progressStatus").innerHTML = "✓ Upload Complete!";
+                }
+
+                document.getElementById("progressFill").style.width = progress + "%";
+                document.getElementById("progressFill").innerHTML = Math.floor(progress) + "%";
+            }, 500);
+        }
+
+        function showLoadingSpinner() {
+            document.getElementById("progressStatus").innerHTML = "⏳ Loading...";
+
+            setTimeout(function() {
+                document.getElementById("progressStatus").innerHTML = "✓ Done!";
+            }, 3000);
+        }
+
+        // ============================================================
+        // 27. API FUNCTIONS
+        // Purpose: Fetch data from external APIs
+        // ============================================================
+
+        function fetchUserData() {
+            document.getElementById("apiOutput").innerHTML = "Loading...";
+
+            // Fetch random user data
+            fetch("https://api.randomuser.me")
+                .then(response => response.json())
+                .then(data => {
+                    let user = data.results[0];
+                    let output = "Random User Generated:\n\n";
+                    output += "Name: " + user.name.first + " " + user.name.last + "\n";
+                    output += "Email: " + user.email + "\n";
+                    output += "Phone: " + user.phone + "\n";
+                    output += "Country: " + user.location.country;
+                    document.getElementById("apiOutput").innerHTML = output;
+                })
+                .catch(error => {
+                    document.getElementById("apiOutput").innerHTML = "Error fetching data: " + error.message;
+                });
+        }
+
+        function fetchJoke() {
+            document.getElementById("apiOutput").innerHTML = "Loading...";
+
+            // Fetch random joke
+            fetch("https://official-joke-api.appspot.com/random_joke")
+                .then(response => response.json())
+                .then(data => {
+                    let output = "Random Joke:\n\n";
+                    output += data.setup + "\n\n";
+                    output += "→ " + data.punchline;
+                    document.getElementById("apiOutput").innerHTML = output;
+                })
+                .catch(error => {
+                    document.getElementById("apiOutput").innerHTML = "Error fetching joke: " + error.message;
+                });
+        }
+
+        function fetchQuote() {
+            document.getElementById("apiOutput").innerHTML = "Loading...";
+
+            // Fetch random quote
+            fetch("https://api.quotable.io/random")
+                .then(response => response.json())
+                .then(data => {
+                    let output = "Random Quote:\n\n";
+                    output += "\"" + data.content + "\"\n\n";
+                    output += "— " + data.author;
+                    document.getElementById("apiOutput").innerHTML = output;
+                })
+                .catch(error => {
+                    document.getElementById("apiOutput").innerHTML = "Error fetching quote: " + error.message;
+                });
+        }
+
+        // ============================================================
+        // 28. CHEAT SHEET FUNCTIONS
+        // Purpose: Quick reference for common patterns
+        // ============================================================
+
+        function showCheatSheet(topic) {
+            let cheatSheets = {
+                variables: `VARIABLES & DATA TYPES
+=====================================
+
+var name = "John";           // String
+var age = 25;                // Number
+var isStudent = true;        // Boolean
+var grades = [90, 85, 88];   // Array
+var person = {               // Object
+    name: "John",
+    age: 25,
+    city: "NYC"
+};
+var nothing = null;          // Null (intentional empty)
+var x;                       // Undefined (not assigned)
+
+// Check data type
+console.log(typeof age);     // "number"
+console.log(typeof name);    // "string"
+console.log(typeof isStudent); // "boolean"`,
+
+                operators: `OPERATORS
+=====================================
+
+// Arithmetic Operators
+let sum = 10 + 5;           // 15
+let diff = 10 - 5;          // 5
+let product = 10 * 5;       // 50
+let quotient = 10 / 5;      // 2
+let remainder = 10 % 3;     // 1
+let power = 2 ** 3;         // 8
+
+// Comparison Operators
+5 === 5;                    // true (equal and same type)
+5 == "5";                   // true (equal)
+5 !== "5";                  // true (not equal)
+5 > 3;                      // true
+5 < 3;                      // false
+5 >= 5;                     // true
+
+// Logical Operators
+true && false;              // false (AND)
+true || false;              // true (OR)
+!true;                      // false (NOT)
+
+// Assignment Operators
+let x = 10;
+x += 5;                     // x = 15
+x -= 3;                     // x = 12
+x *= 2;                     // x = 24`,
+
+                methods: `STRING METHODS
+=====================================
+
+let str = "Hello World";
+
+str.length;                 // 11
+str.toUpperCase();          // "HELLO WORLD"
+str.toLowerCase();          // "hello world"
+str.charAt(0);              // "H"
+str.indexOf("World");       // 6
+str.slice(0, 5);            // "Hello"
+str.substring(0, 5);        // "Hello"
+str.includes("World");      // true
+str.split(" ");             // ["Hello", "World"]
+str.replace("World", "JS"); // "Hello JS"
+str.trim();                 // removes spaces
+str.repeat(2);              // "Hello WorldHello World"`,
+
+                arrays: `ARRAY METHODS
+=====================================
+
+let arr = [1, 2, 3, 4, 5];
+
+arr.length;                 // 5
+arr.push(6);                // adds at end
+arr.pop();                  // removes last
+arr.shift();                // removes first
+arr.unshift(0);             // adds at start
+arr.slice(1, 3);            // [2, 3]
+arr.indexOf(3);             // 2
+arr.includes(4);            // true
+arr.reverse();              // [5, 4, 3, 2, 1]
+arr.sort();                 // sorted array
+
+// Higher order methods
+arr.forEach(item => console.log(item));
+arr.map(item => item * 2);  // [2, 4, 6, 8, 10]
+arr.filter(item => item > 2); // [3, 4, 5]
+arr.find(item => item === 3); // 3
+arr.some(item => item > 3); // true
+arr.every(item => item > 0); // true
+arr.reduce((a, b) => a + b); // 15`
+            };
+
+            let output = cheatSheets[topic] || "Topic not found";
+            document.getElementById("cheatSheetOutput").innerHTML = output;
+        }
+
+        // ============================================================
+        // 29. HTML5 FORM INPUTS FUNCTIONS
+        // Purpose: Validate and interact with advanced form inputs
+        // ============================================================
+
+        function validateFormInputs() {
+            // Get all form inputs
+            let color = document.getElementById("colorInput").value;
+            let date = document.getElementById("dateInput").value;
+            let time = document.getElementById("timeInput").value;
+            let email = document.getElementById("emailInput2").value;
+            let url = document.getElementById("urlInput2").value;
+            let number = document.getElementById("numberInput").value;
+
+            let output = "Form Validation Results:\n\n";
+            output += "✓ Color selected: " + color + "\n";
+            output += "✓ Date: " + (date ? date : "Not selected") + "\n";
+            output += "✓ Time: " + (time ? time : "Not selected") + "\n";
+            output += "✓ Email: " + (email ? email : "Not provided") + "\n";
+            output += "✓ URL: " + (url ? url : "Not provided") + "\n";
+            output += "✓ Number: " + (number ? number : "Not provided");
+
+            alert(output);
+        }
+
+        function resetFormInputs() {
+            document.getElementById("advancedForm").reset();
+            document.getElementById("rangeValue").innerHTML = "50%";
+            document.getElementById("colorDisplay").style.backgroundColor = "#667eea";
+        }
+
+        // Update color display when color input changes
+        document.getElementById("colorInput").addEventListener("input", function(e) {
+            document.getElementById("colorDisplay").style.backgroundColor = e.target.value;
+        });
+
+        // Update range display when slider changes
+        document.getElementById("rangeInput").addEventListener("input", function(e) {
+            document.getElementById("rangeValue").innerHTML = e.target.value + "%";
+        });
+
+        // ============================================================
+        // 30. SEMANTIC ELEMENTS FUNCTIONS
+        // Purpose: Handle dialog and interactive elements
+        // ============================================================
+
+        function openDialog() {
+            document.getElementById("modalDialog").showModal();
+        }
+
+        function closeDialog() {
+            document.getElementById("modalDialog").close();
+        }
+
+        // ============================================================
+        // 31. CANVAS DRAWING FUNCTIONS
+        // Purpose: Draw shapes and graphics on canvas
+        // ============================================================
+
+        let canvas = document.getElementById("drawingCanvas");
+        let ctx = canvas.getContext("2d");
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawRectangle() {
+            clearCanvas();
+            // Draw a rectangle
+            ctx.fillStyle = "#667eea";
+            ctx.fillRect(50, 50, 150, 100);
+
+            // Add border
+            ctx.strokeStyle = "#764ba2";
+            ctx.lineWidth = 3;
+            ctx.strokeRect(50, 50, 150, 100);
+
+            // Add text
+            ctx.fillStyle = "white";
+            ctx.font = "16px Arial";
+            ctx.fillText("Rectangle", 90, 105);
+        }
+
+        function drawCircle() {
+            clearCanvas();
+            // Draw a circle using arc
+            ctx.fillStyle = "#764ba2";
+            ctx.beginPath();
+            ctx.arc(150, 100, 60, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Add border
+            ctx.strokeStyle = "#667eea";
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Add text
+            ctx.fillStyle = "white";
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("Circle", 150, 105);
+        }
+
+        function drawTriangle() {
+            clearCanvas();
+            // Draw triangle using path
+            ctx.fillStyle = "#51cf66";
+            ctx.beginPath();
+            ctx.moveTo(150, 30);      // Top point
+            ctx.lineTo(80, 150);      // Bottom left
+            ctx.lineTo(220, 150);     // Bottom right
+            ctx.closePath();
+            ctx.fill();
+
+            // Add border
+            ctx.strokeStyle = "#2f9e44";
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Add text
+            ctx.fillStyle = "white";
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("Triangle", 150, 110);
+        }
+
+        function drawText() {
+            clearCanvas();
+            // Draw text with various styles
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "#667eea";
+            ctx.textAlign = "center";
+            ctx.fillText("Canvas Text", 250, 80);
+
+            ctx.font = "18px Arial";
+            ctx.fillStyle = "#764ba2";
+            ctx.fillText("Drawing with JavaScript", 250, 130);
+
+            // Draw gradient text effect
+            let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, "#667eea");
+            gradient.addColorStop(1, "#764ba2");
+            ctx.fillStyle = gradient;
+            ctx.font = "bold 24px Arial";
+            ctx.fillText("Gradient Text", 250, 200);
+        }
+
+        // ============================================================
+        // 32. SVG ANIMATION FUNCTIONS
+        // Purpose: Animate SVG elements
+        // ============================================================
+
+        function animateSVG() {
+            // Find all circles in SVG
+            let circles = document.querySelectorAll("#svgContainer circle");
+
+            circles.forEach(function(circle, index) {
+                // Animate each circle
+                circle.style.animation = "pulse 1s ease";
+            });
+
+            // Reset animation after 1 second
+            setTimeout(function() {
+                circles.forEach(function(circle) {
+                    circle.style.animation = "none";
+                });
+            }, 1000);
+        }
+
+        // ============================================================
+        // 33. DATA ATTRIBUTES FUNCTIONS
+        // Purpose: Access and display data from attributes
+        // ============================================================
+
+        function showProductInfo(button) {
+            // Get parent element
+            let item = button.parentElement;
+
+            // Access data attributes using dataset
+            let id = item.dataset.id;
+            let product = item.dataset.product;
+            let price = item.dataset.price;
+            let stock = item.dataset.stock;
+
+            // Display information
+            let output = "Product Information:\n\n";
+            output += "ID: " + id + "\n";
+            output += "Product: " + product + "\n";
+            output += "Price: $" + price + "\n";
+            output += "Stock Available: " + stock + " units";
+
+            document.getElementById("dataOutput").innerHTML = output;
+        }
+
+        // ============================================================
+        // 34. MEDIA CONTROL FUNCTIONS
+        // Purpose: Control audio and video playback
+        // ============================================================
+
+        function playAudio() {
+            document.getElementById("audioPlayer").play();
+        }
+
+        function pauseAudio() {
+            document.getElementById("audioPlayer").pause();
+        }
+
+        function stopAudio() {
+            let audio = document.getElementById("audioPlayer");
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        // ============================================================
+        // 35. PROGRESS ELEMENT FUNCTIONS
+        // Purpose: Update progress bar and meter values
+        // ============================================================
+
+        let progressValue = 70;
+
+        function increaseProgress() {
+            progressValue += 10;
+
+            if (progressValue > 100) {
+                progressValue = 100;
+            }
+
+            document.getElementById("progressElement").value = progressValue;
+            document.getElementById("progressPercent").innerHTML = progressValue + "%";
+        }
+
     </script>
 
 </body>
