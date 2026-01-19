@@ -1,6 +1,6 @@
 # JavaScript-Notes
 
-# **JavaScript for Website Development – Grade 11 IT**
+# **JavaScript for Website Development**
 
 ---
 
