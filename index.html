@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Page title shown on browser tab -->
+    <title>JavaScript Website Demo – G11 IT</title>
+
+    <!-- Link to external CSS file -->
+    <!-- Students can change colors, fonts, layout in style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- onload runs JavaScript when the page finishes loading -->
+<body onload="welcomeMessage()">
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+        <h1>JavaScript in Website Development</h1>
+        <p>Grade 11 IT – Interactive Website Practice</p>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- 1. LOGIN SYSTEM -->
+        <section class="card">
+            <h2>1. Login System</h2>
+            <p>This section demonstrates a simple login validation.</p>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="login()">Login</button>
+
+            <!-- Students can change default username & password in JS -->
+        </section>
+
+        <!-- 2. FORM VALIDATION -->
+        <section class="card">
+            <h2>2. Form Validation</h2>
+            <p>JavaScript checks user input before submission.</p>
+
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="number" id="age" placeholder="Enter your age">
+
+            <button onclick="validateForm()">Submit</button>
+        </section>
+
+        <!-- 3. DOM MANIPULATION -->
+        <section class="card">
+            <h2>3. Change Content (DOM)</h2>
+            <p id="demo">This text will change using JavaScript.</p>
+
+            <button onclick="changeText()">Change Text</button>
+
+            <!-- Students can change the text inside JavaScript -->
+        </section>
+
+        <!-- 4. IMAGE GALLERY -->
+        <section class="card">
+            <h2>4. Image Change</h2>
+            <p>JavaScript updates images dynamically.</p>
+
+            <img id="myImage" src="https://via.placeholder.com/250">
+            <button onclick="changeImage()">Change Image</button>
+
+            <!-- Students can replace image links -->
+        </section>
+
+        <!-- 5. DASHBOARD COUNTER -->
+        <section class="card">
+            <h2>5. Dashboard Counter</h2>
+            <p>Total Visitors: <span id="count">0</span></p>
+
+            <button onclick="increaseCount()">Increase</button>
+        </section>
+
+        <!-- 6. INTERACTIVE MENU -->
+        <section class="card">
+            <h2>6. Interactive Menu</h2>
+
+            <button onclick="toggleMenu()">Toggle Menu</button>
+
+            <nav id="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <!-- Students can add more menu items -->
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2026 King David Academy | Grade 11 IT</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT SECTION ================= -->
+    <script>
+        // Displays welcome message when page loads
+        function welcomeMessage() {
+            alert("Welcome to the JavaScript Demo Website");
+        }
+
+        // LOGIN VALIDATION FUNCTION
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            // Students can change credentials here
+            if (user === "" || pass === "") {
+                alert("Please fill in all fields");
+            } else if (user === "admin" && pass === "1234") {
+                alert("Login successful");
+            } else {
+                alert("Incorrect username or password");
+            }
+        }
+
+        // FORM VALIDATION FUNCTION
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            if (name === "") {
+                alert("Name is required");
+            } else if (age < 18) {
+                alert("You must be at least 18 years old");
+            } else {
+                alert("Form submitted successfully");
+            }
+        }
+
+        // DOM MANIPULATION FUNCTION
+        function changeText() {
+            document.getElementById("demo").innerHTML =
+                "The content has been updated using JavaScript!";
+        }
+
+        // IMAGE CHANGE FUNCTION
+        function changeImage() {
+            document.getElementById("myImage").src =
+                "https://via.placeholder.com/250/3498db/ffffff";
+        }
+
+        // COUNTER FUNCTION
+        let counter = 0;
+        function increaseCount() {
+            counter++;
+            document.getElementById("count").innerHTML = counter;
+        }
+
+        // INTERACTIVE MENU FUNCTION
+        function toggleMenu() {
+            let menu = document.getElementById("menu");
+            menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
